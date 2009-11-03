@@ -20,10 +20,11 @@ no_index:
     - t
     - xt
 requires:
-  Any::Moose: 0.06
+  Any::Moose: 0.1
   DB_File: 0
   Filter::Util::Call: 0
   XML::Feed: 0.41
+  perl: 5.8.0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02
+version: 0.03
