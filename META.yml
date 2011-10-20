@@ -1,14 +1,13 @@
 ---
 abstract: 'remove duplicated entries from feed'
 author:
-  - 'Tokuhiro Matsuno <tokuhirom  slkjfd gmail.com>'
+  - 'Tokuhiro Matsuno E<lt>tokuhirom  slkjfd@ gmail.comE<gt>'
 build_requires:
-  ExtUtils::MakeMaker: 6.42
-  Test::More: 0
+  Test::More: 0.98
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 0.91'
+  Module::Build: 0.38
+dynamic_config: 0
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112150'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,12 +18,21 @@ no_index:
     - inc
     - t
     - xt
+provides:
+  XML::Feed::Deduper:
+    file: lib/XML/Feed/Deduper.pm
+    version: 0.05
+  XML::Feed::Deduper::DB_File:
+    file: lib/XML/Feed/Deduper/DB_File.pm
+    version: 0
+  XML::Feed::Deduper::Role:
+    file: lib/XML/Feed/Deduper/Role.pm
+    version: 0
 requires:
   Any::Moose: 0.1
   DB_File: 0
-  Filter::Util::Call: 0
   XML::Feed: 0.41
-  perl: 5.8.0
+  perl: v5.8.8
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.05

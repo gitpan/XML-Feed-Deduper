@@ -1,27 +1,38 @@
-This is Perl module XML::Feed::Deduper.
+NAME
+    XML::Feed::Deduper - remove duplicated entries from feed
 
-INSTALLATION
+SYNOPSIS
+        use XML::Feed;
+        use XML::Feed::Deduper;
+        my $feed = XML::Feed->parse($content);
+        my $deduper = XML::Feed::Deduper->new(
+            path => '/tmp/foo.db',
+        );
+        for my $entry ($deduper->dedup($feed->entries)) {
+            # only new entries come here!
+        }
 
-XML::Feed::Deduper installation is straightforward. If your CPAN shell is set up,
-you should just be able to do
+DESCRIPTION
+    XML::Feed::Deduper is deduper for XML::Feed.
 
-    % cpan XML::Feed::Deduper
+    You can write the aggregator more easily :)
 
-Download it, unpack it, then build it as per the usual:
+    The concept is stolen from Plagger::Rule::Deduper.
 
-    % perl Makefile.PL
-    % make && make test
+    Enjoy!
 
-Then install it:
+CAUTION
+    This module is still in its beta quality.
 
-    % make install
+    your base are belongs to us!
 
-DOCUMENTATION
+AUTHOR
+    Tokuhiro Matsuno <tokuhirom slkjfd@ gmail.com>
 
-XML::Feed::Deduper documentation is available as in POD. So you can do:
+SEE ALSO
+    Plagger::Rule::Deduper
 
-    % perldoc XML::Feed::Deduper
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 
-to read the documentation online with your favorite pager.
-
-Tokuhiro Matsuno

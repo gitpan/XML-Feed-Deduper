@@ -1,0 +1,64 @@
+{
+   "abstract" : "remove duplicated entries from feed",
+   "author" : [
+      "Tokuhiro Matsuno E<lt>tokuhirom  slkjfd@ gmail.comE<gt>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112150",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "XML-Feed-Deduper",
+   "no_index" : {
+      "directory" : [
+         "inc",
+         "t",
+         "xt"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::More" : "0.98"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.38"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Any::Moose" : "0.1",
+            "DB_File" : 0,
+            "XML::Feed" : "0.41",
+            "perl" : "v5.8.8"
+         }
+      }
+   },
+   "provides" : {
+      "XML::Feed::Deduper" : {
+         "file" : "lib/XML/Feed/Deduper.pm",
+         "version" : "0.05"
+      },
+      "XML::Feed::Deduper::DB_File" : {
+         "file" : "lib/XML/Feed/Deduper/DB_File.pm",
+         "version" : 0
+      },
+      "XML::Feed::Deduper::Role" : {
+         "file" : "lib/XML/Feed/Deduper/Role.pm",
+         "version" : 0
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ]
+   },
+   "version" : "0.05"
+}
