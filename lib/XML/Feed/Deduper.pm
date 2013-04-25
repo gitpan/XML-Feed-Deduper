@@ -1,16 +1,21 @@
 package XML::Feed::Deduper;
 use strict;
 use warnings;
-use Any::Moose;
-use XML::Feed;
 use 5.008008;
-our $VERSION = '0.05';
+
+our $VERSION = '0.06';
+
+use XML::Feed;
+
+use Mouse;
+
+no Mouse;
 
 sub BUILD {
     my ($self, $args) = @_;
     my $engine = delete $args->{engine} || 'DB_File';
     $engine = $engine =~ s/^\+// ? $engine : "@{[ __PACKAGE__ ]}::${engine}";
-    Any::Moose::load_class($engine);
+    Mouse::Util::load_class($engine);
     my $instance = $engine->new($args) or die 'wtf?';
     $self->{engine} = $instance;
 }
@@ -28,9 +33,11 @@ sub dedup {
     return @res;
 }
 
-no Any::Moose;
-__PACKAGE__->meta->make_immutable;
 __END__
+
+=encoding utf-8
+
+=for stopwords deduper
 
 =head1 NAME
 
@@ -66,7 +73,7 @@ your base are belongs to us!
 
 =head1 AUTHOR
 
-Tokuhiro Matsuno E<lt>tokuhirom  slkjfd@ gmail.comE<gt>
+Tokuhiro Matsuno E<lt>tokuhirom@gmail.comE<gt>
 
 =head1 SEE ALSO
 
